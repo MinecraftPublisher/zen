@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap');
+
+:root {
+    --bg-color: #262727;
+    --main-color: #f0d3c9;
+    --caret-color: #f0d3c9;
+    --sub-color: #665957;
+    --sub-alt-color: #343231;
+    --text-color: #fff;
+    --error-color: #bd4141;
+    --error-extra-color: #883434;
+    --colorful-error-color: #bd4141;
+    --colorful-error-extra-color: #883434;
+    --link-color: rgb(127, 208, 255)
+}
+
+* {
+    font-family: 'Fira Code', monospace
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    user-select: none
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color)
+}
+
+div.box {
+    position: fixed;
+    top: calc(40vh - 4.2rem);
+    left: calc(50vw - 26.3rem);
+
+    resize: none;
+    outline: none;
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: var(--bg-color);
+    color: var(--main-color);
+
+    width: 50rem;
+    min-height: 15rem;
+    font-size: 1.3rem;
+
+    overflow: scroll;
+    word-wrap: normal
+}
+
+@keyframes caret {
+    from {
+        opacity: 1
+    }
+
+    50% {
+        opacity: 0.1
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+div.caret {
+    position: fixed;
+    top: calc(40vh - 3rem);
+    left: calc(50vw - 25rem);
+
+    transform: translate(0.6rem, 0);
+
+    animation: 1s caret ease-in-out infinite;
+    background-color: var(--caret-color);
+    display: inline-block;
+    width: 0.8rem;
+    height: 1.2em;
+    border-radius: 2px;
+
+    margin-left: 1px;
+    margin-bottom: -5px;
+
+    transition: 0.1s
+}
+
+div.words {
+    display: inline
+}
+
+div.character {
+    display: inline-block;
+    min-width: 0.8rem
+}
+
+::-webkit-scrollbar {
+    display: none
+}
+
+span.wipe {
+    color: var(--error-color);
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    left: 20px
+}
+
+span.text {
+    position: fixed;
+    bottom: 20px;
+    left: 80px
+}
